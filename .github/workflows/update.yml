@@ -61,9 +61,9 @@ jobs:
         export remotefilename="${{ env.DIR }}${{ env.NAME }}"
         chmod +x ./oneup
         ./oneup
+#      if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
     - name: Delete old Workflow Runs
       uses: GitRML/delete-workflow-runs@main
-#      if: env.DELETE_OLD_WORKFLOW == 'true' && !cancelled()
       with:
         retain_days: 1
         keep_minimum_runs: 2
