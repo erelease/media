@@ -46,7 +46,7 @@ jobs:
 
     - name: Download Files
       run: |
-        wget "${{ env.URL }}" -O "${{ env.NAME }}"
+        wget "${{ env.URL }}" -q -O "${{ env.NAME }}"
         [ $? == 0 ] && echo "Result=true" >> $GITHUB_ENV || echo "Result=false" >> $GITHUB_ENV
 
     - name: Upload Files
